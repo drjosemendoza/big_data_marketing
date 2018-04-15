@@ -3,7 +3,7 @@
 echo -e "\n\n\n Big Data Marketing - MK-672"
 echo -e "\n Dr. Jose Mendoza \n\n"
 
-export YEAR=${YEAR:=2018}
+export YEAR=${YEAR:=2017}
 
 echo "Downloading YEAR=$YEAR..."
 
@@ -28,7 +28,7 @@ done
 echo -e "\n\n\n Fetching on-time airline data from BTS.GOV, please sit tight...\n\n"
 echo -e "Step 1: Fetching data \n\n"
 
-export YEAR=${YEAR:=2018}
+export YEAR=${YEAR:=2017}
 
 echo "Downloading YEAR=$YEAR..."
 
@@ -54,15 +54,15 @@ echo -e "\n\n Converting files from ZIP to CSV... \n\n"
 
 for month in `seq -w 1 12`; do
  unzip 2017$month.zip
- mv *ONTIME.csv 2018$month.csv
+ mv *ONTIME.csv 2017$month.csv
  rm 2017$month.zip
 done
 
 echo -e "\n\n Cleaning CSV files, it might take a while, hold on... \n\n"
 
 for month in `seq -w 1 12`; do
- sed 's/,$//g' 2018$month.csv | sed 's/"//g' > tmp
- mv tmp 2018$month.csv
+ sed 's/,$//g' 2017$month.csv | sed 's/"//g' > tmp
+ mv tmp 2017$month.csv
 done
 
 echo -e "\n\n Process Complete. \n\n"
